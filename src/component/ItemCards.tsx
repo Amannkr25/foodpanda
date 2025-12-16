@@ -10,8 +10,8 @@ export type food = {
   price: number
 }
 
-export default function ItemCards({setItemlist,itemlist}
-  :{setItemlist:any,itemlist:any}) {
+export default function ItemCards({setItemlist,itemlist,setEdit,editItem}
+  :{setItemlist:any,itemlist:any,setEdit:any,editItem:any}) {
 
   const [count, setCount] = useState<number>(0)
   const [picked, setPicked] = useState<food | null>(null)
@@ -110,7 +110,7 @@ return (
         </FormControl>
       </Box>
 
-      <SubitemCards setItemlist={setItemlist} itemlist={itemlist} picked={picked} count={count} setCount={setCount}/>
+      <SubitemCards setItemlist={setItemlist} itemlist={itemlist} picked={picked} count={count} setCount={setCount} setEdit={setEdit} editItem={editItem}/>
      
     </>
 

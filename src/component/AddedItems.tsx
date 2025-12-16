@@ -15,7 +15,7 @@ import React, { useState } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 
-export default function AddedItems({ itemlist, setItemlist,setEditId }: any) {
+export default function AddedItems({ itemlist, setItemlist,setEdit}: any) {
     const [open, setOpen] = useState(false)
     const [selectedId, setSelectedId] = useState<number | null>(null)
 const existedItem=itemlist?.find((list:any)=>list.id===selectedId)
@@ -79,7 +79,7 @@ const existedItem=itemlist?.find((list:any)=>list.id===selectedId)
                                     <DeleteIcon sx={{ color: "#8e0e0eff" }} />
                                 </IconButton>
 
-                                <IconButton >
+                                <IconButton onClick={() => setEdit(list)}>
                                     <BorderColorIcon sx={{ color: "#444345ff", "&:hover": { color: "#147225ff" } }} />
                                 </IconButton>
                             </Box>

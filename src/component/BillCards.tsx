@@ -4,7 +4,7 @@ import AddedItems from './AddedItems'
 import { count, log } from 'console';
 import { useMemo } from 'react';
 
-export default function BillCards({ itemlist ,setItemlist,setEditId}: any) {
+export default function BillCards({ itemlist ,setItemlist,setEdit}: any) {
 
 
 
@@ -62,7 +62,7 @@ export default function BillCards({ itemlist ,setItemlist,setEditId}: any) {
 
       <Box sx={{ height: "100%", bgcolor: "#c2acd1ff", borderRadius: 3, p: 1, display: "flex", flexDirection: "column" }}>
 
-        <AddedItems itemlist={itemlist} setItemlist={setItemlist} setEditId={setEditId} />
+        <AddedItems itemlist={itemlist} setItemlist={setItemlist} setEdit={setEdit} />
 
       </Box>
 

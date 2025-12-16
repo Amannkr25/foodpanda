@@ -10,8 +10,7 @@ export default function Index() {
 
   
   const[itemlist,setitemlist]=useState<food | null>(null)
-  const [editId,setEditId]=useState()
-  
+  const [edit,setEdit]=useState<food | null>(null)
 
   console.log(itemlist);
   
@@ -44,8 +43,8 @@ export default function Index() {
     </Box>
 
     <Box sx={{height:"100%",display:"grid",gridTemplateColumns:"7fr 3fr",gap:.5}}>
-      <Box sx={{height:"100%", width:"100%",bgcolor:"#beb5daff", borderRadius:3}} ><ItemCards  setItemlist={setitemlist} itemlist={itemlist}/></Box>
-      <Box sx={{height:"100%",width:"100%",bgcolor:"#a994c1ff",borderRadius:3}}><BillCards setItemlist={setitemlist}  itemlist={itemlist} setEditId={setEditId}/></Box>
+      <Box sx={{height:"100%", width:"100%",bgcolor:"#beb5daff", borderRadius:3}} ><ItemCards  setItemlist={setitemlist} itemlist={itemlist} setEdit={setEdit} editItem={edit}/></Box>
+      <Box sx={{height:"100%",width:"100%",bgcolor:"#a994c1ff",borderRadius:3}}><BillCards setItemlist={setitemlist}  itemlist={itemlist}  setEdit={setEdit}/></Box>
 
     </Box>
 
