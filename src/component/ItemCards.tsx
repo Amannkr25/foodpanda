@@ -22,7 +22,7 @@ export default function ItemCards({setItemlist,itemlist,setEdit,editItem}
     setCount(1)
   }
 
-
+useEffect(()=>{console.log("picked",picked)},[picked])
   
   const fooditems: food[] = [
     {
@@ -110,7 +110,7 @@ return (
         </FormControl>
       </Box>
 
-      <SubitemCards setItemlist={setItemlist} itemlist={itemlist} picked={picked} count={count} setCount={setCount} setEdit={setEdit} editItem={editItem}/>
+      <SubitemCards setItemlist={setItemlist} itemlist={itemlist} picked={picked} count={count} setCount={setCount} setEdit={setEdit} editItem={editItem} setPicked={setPicked}/>
      
     </>
 

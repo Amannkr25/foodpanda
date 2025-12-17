@@ -3,15 +3,17 @@ import React, { useEffect, useState } from 'react'
 import { food } from './ItemCards';
 import { log } from 'node:console';
 
+type setState=()=>void;
 export default function SubitemCards({
   picked,
   count,
   setItemlist,
   setCount,
   itemlist,
-  setEdit, editItem
+  setEdit, editItem,
+  setPicked
 }
-  : { picked: food | null, count: number, setItemlist: any, setCount: any, itemlist: any, setEdit: any, editItem: any }) {
+  : { picked: food | null, count: number, setItemlist: any, setCount: any, itemlist: any, setEdit: any, editItem: any,setPicked:any }) {
 
   const [checked, setChecked] = useState<string[]>([]);
 
@@ -29,6 +31,8 @@ export default function SubitemCards({
     if (editItem) {
       setCount(editItem.count)
       setChecked(editItem.extra?.map((e: any) => e.info) || [])
+      setPicked({id:editItem.id,name:editItem.name,price:editItem.price})
+      console.log(editItem)
     }
   }, [editItem])
 
