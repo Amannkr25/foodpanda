@@ -68,7 +68,7 @@ return (
           fooditems?.map((item, key) => <Button key={key} variant="contained"
             sx={{
               p: 2, fontSize: "30px", height: "100px", width: "333px",
-              bgcolor: `${picked?.name === item.name ? "#4a2b61ff" : "#8861a4ff"}`, borderRadius: 5
+              bgcolor: `${picked?.name === item.name ? "#826018ff" : "#b37838ff"}`, borderRadius: 5
             }}
 
             onClick={(e) => storeItem(item)}
@@ -98,7 +98,7 @@ return (
                   ml: 0,
                   "& .MuiFormControlLabel-label": {
                     fontSize: 20, color: "white", // change as needed
-                  }, border: "solid #51405dff", px: 2, borderRadius: 4, bgcolor: `${count === i + 1 ? "#4e3561ff" : "#996fb8ff"}`
+                  }, border: "solid #52412bff", px: 2, borderRadius: 4, bgcolor: `${count === i + 1 ? "#826018ff" : "#b37838ff"}`
 
                 }}
                 value={(i + 1)}

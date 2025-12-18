@@ -30,11 +30,11 @@ export default function BillCards({ itemlist ,setItemlist,setEdit}: any) {
   return (
     <Box sx={{ p: 1, height: "100%", display: "grid", gridTemplateRows: "3fr 7fr", gap: 1 }}>
       <Box sx={{
-        p: 1, height: "100%", width: "100%", bgcolor: "white",
+        p: 1, height: "100%", width: "100%", bgcolor: "transparent",
         borderRadius: 3
       }}>
 
-        <Typography variant='h6' sx={{ fontWeight: "bold", ml: 2, color: "#b991c8ff" }}>Total Bill</Typography>
+        <Typography variant='h6' sx={{ fontWeight: "bold", ml: 2, color: "#5d4d29ff" }}>Total Bill</Typography>
 
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", maxWidth: 500, borderRadius: 4 }}>
 
@@ -43,11 +43,12 @@ export default function BillCards({ itemlist ,setItemlist,setEdit}: any) {
               height: 120,
               width:248,
               borderRadius: 4,
-              bgcolor: "#d2aac0ff",
+              bgcolor: "#dac6b1ff",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
-              px: 3
+              justifyContent: "space-around",
+              px: 3,
+              boxShadow:3
             }}
           >
             <Typography variant="h5" fontWeight="bold" color='white'sx={{p:2,height:"full"}}>
@@ -60,7 +61,7 @@ export default function BillCards({ itemlist ,setItemlist,setEdit}: any) {
 
       </Box  >
 
-      <Box sx={{ height: "100%", bgcolor: "#c2acd1ff", borderRadius: 3, p: 1, display: "flex", flexDirection: "column" }}>
+      <Box sx={{ height: "100%", bgcolor: "#d9ccb6ff", boxShadow:3, borderRadius: 3, p: 1, display: "flex", flexDirection: "column" }}>
 
         <AddedItems itemlist={itemlist} setItemlist={setItemlist} setEdit={setEdit} />
 

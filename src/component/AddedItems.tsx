@@ -44,8 +44,8 @@ const existedItem=itemlist?.find((list:any)=>list.id===selectedId)
 
     return (
         <>
-            <Box sx={{ mb: 1, height: 40, width: "100%", bgcolor: "#bc83b4ff", borderRadius: 2 }}>
-                <Typography variant="h6" sx={{ textAlign: "center", color: "#40293dff", fontWeight: "bold" }}>
+            <Box sx={{ mb: 1, height: 40, width: "100%", bgcolor: "#9b7744ff", borderRadius: 2 }}>
+                <Typography variant="h6" sx={{ color: "#554110ff", fontWeight: "bold",display:"flex",justifyContent:"center",alignContent:"center" }}>
                     Item List
                 </Typography>
 
@@ -65,10 +65,10 @@ const existedItem=itemlist?.find((list:any)=>list.id===selectedId)
                     {itemlist?.map((list: any) => (
                         <ListItem
                             key={list.id}
-                            sx={{ p: 2, bgcolor: "#a37b9eff", borderRadius: 2, display: "flex" }}
+                            sx={{ p: 2, bgcolor: "#a58354ff", borderRadius: 2, display: "flex" }}
                         >
                             <ListItemText sx={{ color: "white", fontWeight: "bold" }}>
-                                {list.name}
+                                {list.name}: {list.count}
                             </ListItemText>
                             <ListItemText sx={{ color: "white", fontWeight: "bold" }}>
                                 ₹{list.price}
@@ -80,7 +80,7 @@ const existedItem=itemlist?.find((list:any)=>list.id===selectedId)
                                 </IconButton>
 
                                 <IconButton onClick={() => setEdit(list)}>
-                                    <BorderColorIcon sx={{ color: "#444345ff", "&:hover": { color: "#147225ff" } }} />
+                                    <BorderColorIcon sx={{ color: "#444345ff", "&:hover": { color: "#0da229ff" } }} />
                                 </IconButton>
                             </Box>
                         </ListItem>
