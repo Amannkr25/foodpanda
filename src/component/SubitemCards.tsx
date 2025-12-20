@@ -71,6 +71,8 @@ export default function SubitemCards({
     }
   }, [editItem])
 
+
+
   const addItems = () => {
 
     if (!picked) {
@@ -78,25 +80,29 @@ export default function SubitemCards({
       return
     };
 
-
-
-
     const SelecteSider = Sider.filter(s => checked.includes(s.info))
 
+
+
+
     if (editItem) {
-      setItemlist((prev: food[]) =>
-        prev.map(item =>
-          item.id === editItem.id
-            ? { ...item, count, extra: SelecteSider }
-            : item
+      if (editItem.id === picked.id) {
+        setItemlist((prev: food[]) =>
+          prev.map(item =>
+            item.id === editItem.id
+              ? { ...item, count, extra: SelecteSider }
+              : item
+          )
         )
-      )
+      }
       setEdit(null)
       setChecked([])
       setCount(1)
 
-      openSnack('Item updated successfully', 'success')
-
+      if (editItem.id === picked.id) {
+        openSnack('Item updated successfully', 'success')
+      }
+      else{openSnack('Wrong Item Selected', 'warning')}
       return
     }
     else {
@@ -109,18 +115,20 @@ export default function SubitemCards({
       }
 
     }
-
-
-
     const FullItemList = {
       ...picked, count, extra: SelecteSider
     }
+
+
 
     setItemlist((prev: food[] | null) => [...(prev || []), FullItemList])
 
     setChecked([])
     setCount(1)
     openSnack('Item added successfully', 'success')
+
+
+
 
   }
   const clearRecord = () => {
